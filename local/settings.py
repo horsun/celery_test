@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'local_test',
     'djkombu',
-    'djcelery'
 ]
 
 MIDDLEWARE_CLASSES = [
