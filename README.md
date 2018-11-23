@@ -1,6 +1,6 @@
 ```
 ###################
-# 在总conf中添加这个就能在线启动celery任务
+# 在总conf中添加这个就能在线启动celery 的web 管理工具
 #[inet_http_server]
 #port=*:9001
 #username=admin
