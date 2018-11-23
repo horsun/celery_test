@@ -1,4 +1,3 @@
-###################
 ```
 ###################
 # 在总conf中添加这个就能在线启动celery任务
@@ -15,4 +14,3 @@ $ sudo supervisorctl start celery_worker   还有/restart/ stop /
 $ sudo supervisorctl status
 celery_worker                    RUNNING   pid 16751, uptime 0:00:34
 ```
-###################
