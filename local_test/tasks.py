@@ -2,13 +2,13 @@ from __future__ import absolute_import, unicode_literals
 
 import time
 
-from local import celery_app
+from celery import shared_task
 
 
-@celery_app.task
+@shared_task
 def check_order_pay_time(obj):
-    print('开始及时')
     ss = obj.__len__()
-    time.sleep(obj.__len__())
-    print('%s已经过了' % ss)
-    print('订单已经失效')
+    print('start sleep %s s' % ss)
+    time.sleep(ss)
+    print('%s seconds has gone' % ss)
+    print('final success')
