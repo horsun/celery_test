@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'local_test',
-    'djkombu',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -122,6 +121,7 @@ STATIC_URL = '/static/'
 # dj celery配置
 # 使用 celery -A [project name] worker -l info 命令行
 djcelery.setup_loader()
-BROKER_URL = 'redis://127.0.0.1:6379//'  # 数据库端口
+# BROKER_URL = 'redis://127.0.0.1:6379//'  # redis数据库端口
+BROKER_URL = 'amqp://localhost'  # rabbit_mq
 CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 CELERY_TIMEZONE = TIME_ZONE

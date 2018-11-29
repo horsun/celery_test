@@ -14,3 +14,6 @@ $ sudo supervisorctl start celery_worker   还有/restart/ stop /
 $ sudo supervisorctl status
 celery_worker                    RUNNING   pid 16751, uptime 0:00:34
 ```
+
+
+>[教程](https://simpleisbetterthancomplex.com/tutorial/2017/08/20/how-to-use-celery-with-django.html)

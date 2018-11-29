@@ -3,6 +3,9 @@ from __future__ import absolute_import, unicode_literals
 import time
 
 from celery import shared_task
+from django.contrib.auth.models import User
+from django.utils.crypto import get_random_string
+import string
 
 
 @shared_task
@@ -12,3 +15,18 @@ def check_order_pay_time(obj):
     time.sleep(ss)
     print('%s seconds has gone' % ss)
     print('final success')
+
+
+@shared_task
+def create_random_user_accounts(total):
+    for i in range(total):
+        username = 'user_{0}'.format(get_random_string(10, string.ascii_letters))
+        email = '{0}@example.com'.format(username)
+        pwd = get_random_string(50)
+        User.objects.create_user(
+            username=username,
+            email=email,
+            password=pwd,
+        )
+        print('{0}created with success!'.format(username))
+    return '{0} random users created with success!'.format(total)
