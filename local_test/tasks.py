@@ -27,5 +27,18 @@ def create_random_user_accounts(total):
             email=email,
             password=pwd,
         )
-        print('{0}created with success!'.format(username))
     return '{0} random users created with success!'.format(total)
+
+
+@shared_task
+def test_sequence(num):
+    time.sleep(int(num))
+    username = get_random_string(10) + '__' + str(num)
+    email = '{0}@example.com'.format(username)
+    pwd = get_random_string(50)
+    User.objects.create_user(
+        username=username,
+        email=email,
+        password=pwd,
+    )
+    return '{0}created with success!'.format(username)
