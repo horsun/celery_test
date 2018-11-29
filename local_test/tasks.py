@@ -13,8 +13,7 @@ def check_order_pay_time(obj):
     ss = obj.__len__()
     print('start sleep %s s' % ss)
     time.sleep(ss)
-    print('%s seconds has gone' % ss)
-    print('final success')
+    print('%s seconds has gone,success' % ss)
 
 
 @shared_task

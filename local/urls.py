@@ -17,11 +17,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from local_test.views import HAha, Stop, GenerateRandomUserView
+from local_test.views import CreateTimedTask, Stop, GenerateRandomUserView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^haha/', HAha.as_view()),
+    url(r'^create_task/', CreateTimedTask.as_view()),
     url(r'^stop/(?P<task_id>.+)', Stop.as_view()),
     url(r'^user/$', GenerateRandomUserView.as_view())
 ]

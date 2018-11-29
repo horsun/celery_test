@@ -1,5 +1,4 @@
 # Create your views here.
-from django.contrib import messages
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -8,7 +7,7 @@ from local import celery_app
 from .tasks import check_order_pay_time, create_random_user_accounts
 
 
-class HAha(APIView):
+class CreateTimedTask(APIView):
     def get(self, request):
         """
         create a Timed task
