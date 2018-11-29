@@ -42,4 +42,4 @@ class GenerateRandomUserView(APIView):
         total = request.query_params.get('total', 50)
         task = create_random_user_accounts.delay(int(total))
         print(task.id)
-        messages.success(self.request, 'we are generating your random users! Wait a moment and refresh this page.')
+        return Response('request has get, and response first', status.HTTP_200_OK)
