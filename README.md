@@ -22,5 +22,7 @@ celery_worker                    RUNNING   pid 16751, uptime 0:00:34
 在实际项目中可能还有用到延迟队列，比如 n分钟后关闭订单
 需要将delay()方法改为apply_async((*args),countdown=n*60), countdown 单位是秒
 详细见
+如果需要结束延时任务 只需要将 记录task.id
+celery_app.control.revoke(task_id)
 ```
  [文档](http://docs.celeryproject.org/en/master/userguide/calling.html#eta-and-countdown)
